@@ -7,6 +7,7 @@ A DDD style boilerplate with spring boot
 - Java 8
 - Spring Boot 2
 - Spring Data Jdbc
+- Apache Shiro
 - Mysql
 - Maven
 
