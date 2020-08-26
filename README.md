@@ -10,6 +10,8 @@ A DDD style boilerplate with spring boot
 - Apache Shiro
 - Mysql
 - Maven
+- Flyway
+- RBAC
 
 ## principle
 
@@ -18,3 +20,13 @@ A DDD style boilerplate with spring boot
 - Necessary layering.
 - Easy to use and understand.
 - Feature limited.
+- Lightweight.
+
+## features
+
+- Project structure include Model\DTO Design. 
+- API design.
+- Exception system design.
+- With a small CMS as business example.
+- With multiple applications layers.
+- paging/sort/search for list
