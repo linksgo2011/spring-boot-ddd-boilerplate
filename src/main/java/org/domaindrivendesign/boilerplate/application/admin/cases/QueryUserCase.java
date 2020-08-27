@@ -2,14 +2,20 @@ package org.domaindrivendesign.boilerplate.application.admin.cases;
 
 import lombok.Builder;
 import lombok.Data;
-import org.domaindrivendesign.boilerplate.context.user.model.User;
-import org.domaindrivendesign.boilerplate.context.user.model.UserRole;
+import lombok.NoArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
 
 import java.time.Instant;
-import java.util.Arrays;
-import java.util.List;
 
-public class ListUsers {
+public class QueryUserCase {
+    @Data
+    @NoArgsConstructor
+    public static class UserCriteria {
+        private String username;
+
+        private Boolean enabled;
+    }
 
     @Builder
     @Data
@@ -24,18 +30,16 @@ public class ListUsers {
 
         private String fullName;
 
-        private String password;
-
         private boolean enabled;
 
         private boolean emailVerified;
 
         private Instant createdAt;
-
-        private List<UserRole> userRoles;
     }
 
-    public static List<Response> assemble(List<User> users) {
-        return Arrays.asList();
+    public static Page<Response> assemble(Page users) {
+        return users.map(
+                user -> new ModelMapper().map(users, Response.class)
+        );
     }
 }

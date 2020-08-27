@@ -1,5 +1,10 @@
 package org.domaindrivendesign.boilerplate.context.user.repository;
 
-public class UserRepository {
+import org.domaindrivendesign.boilerplate.context.user.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
+public interface UserRepository extends PagingAndSortingRepository<User, String> {
+    Page<User> findAll(Pageable pageable);
 }
