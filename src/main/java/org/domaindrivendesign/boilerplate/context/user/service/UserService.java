@@ -17,4 +17,9 @@ public class UserService {
     public Page<User> listUsers(Pageable pageable) {
         return userRepository.findAll(pageable);
     }
+
+    public User addUser(User toUser) {
+        // TODO
+        return null;
+    }
 }

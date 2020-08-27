@@ -3,18 +3,24 @@ package org.domaindrivendesign.boilerplate.application.admin.cases;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.domaindrivendesign.boilerplate.context.user.model.User;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Page;
 
 import java.time.Instant;
 
-public class QueryUserCase {
+public class AddUserCase {
     @Data
     @NoArgsConstructor
-    public static class UserCriteria {
+    public static class Request {
+        private String email;
+
+        private String phone;
+
         private String username;
 
-        private Boolean enabled;
+        private String fullName;
+
+        private boolean enabled;
     }
 
     @Builder
@@ -37,9 +43,11 @@ public class QueryUserCase {
         private Instant createdAt;
     }
 
-    public static Page<Response> toResponse(Page users) {
-        return users.map(
-                user -> new ModelMapper().map(users, Response.class)
-        );
+    public static User toUser(Request request) {
+        return new ModelMapper().map(request, User.class);
+    }
+
+    public static Response toResponse(User user) {
+        return new ModelMapper().map(user, Response.class);
     }
 }

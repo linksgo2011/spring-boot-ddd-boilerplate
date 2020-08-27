@@ -1,11 +1,14 @@
 package org.domaindrivendesign.boilerplate.application.admin;
 
+import org.domaindrivendesign.boilerplate.application.admin.cases.AddUserCase;
 import org.domaindrivendesign.boilerplate.application.admin.cases.QueryUserCase;
 import org.domaindrivendesign.boilerplate.context.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +24,13 @@ public class UserResource {
             QueryUserCase.UserCriteria userCriteria,
             Pageable pageable
     ) {
-        return QueryUserCase.assemble(userService.listUsers(pageable));
+        return QueryUserCase.toResponse(userService.listUsers(pageable));
+    }
+
+    @PostMapping("")
+    public AddUserCase.Response addUser(
+            @RequestBody AddUserCase.Request request
+    ) {
+        return AddUserCase.toResponse(userService.addUser(AddUserCase.toUser(request)));
     }
 }
