@@ -1,6 +1,5 @@
 package org.domaindrivendesign.boilerplate.application.admin.cases;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.domaindrivendesign.boilerplate.context.user.model.User;
@@ -23,8 +22,8 @@ public class AddUserCase {
         private boolean enabled;
     }
 
-    @Builder
     @Data
+    @NoArgsConstructor
     public static class Response {
         private String id;
 

@@ -7,10 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserService {
+    public static final String TMP_PASSWORD = "123456";
     @Autowired
     private UserRepository userRepository;
 
@@ -18,8 +17,8 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public User addUser(User toUser) {
-        // TODO
-        return null;
+    public User addUser(User user) {
+        user.setPassword(TMP_PASSWORD);
+        return userRepository.save(user);
     }
 }

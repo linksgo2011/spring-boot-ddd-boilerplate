@@ -6,9 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import org.domaindrivendesign.boilerplate.core.model.AggregateRoot;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -17,10 +19,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    @Id
-    private String id;
-
+public class User extends AggregateRoot {
     private String email;
 
     private String phone;
@@ -35,7 +34,8 @@ public class User {
 
     private boolean emailVerified;
 
-    private Instant createdAt;
+    @CreatedDate
+    private LocalDateTime createdAt;
 
     private List<UserRole> userRoles;
 }
