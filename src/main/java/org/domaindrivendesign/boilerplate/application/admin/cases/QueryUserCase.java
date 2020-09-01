@@ -3,10 +3,13 @@ package org.domaindrivendesign.boilerplate.application.admin.cases;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.domaindrivendesign.boilerplate.context.user.model.UserRole;
+import org.joda.time.DateTime;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 
 import java.time.Instant;
+import java.util.List;
 
 public class QueryUserCase {
     @Data
@@ -17,8 +20,8 @@ public class QueryUserCase {
         private Boolean enabled;
     }
 
-    @Builder
     @Data
+    @NoArgsConstructor
     public static class Response {
         private String id;
 
@@ -34,7 +37,9 @@ public class QueryUserCase {
 
         private boolean emailVerified;
 
-        private Instant createdAt;
+        private DateTime createdAt;
+
+        private List<UserRole> userRoles;
     }
 
     public static Page<Response> toResponse(Page users) {

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.joda.time.DateTime;
 
 import java.time.Instant;
 
@@ -18,7 +19,7 @@ public class Category {
 
     private String name;
 
-    private Instant updateAt;
+    private DateTime updateAt;
 
-    private Instant createdAt;
+    private DateTime createdAt;
 }

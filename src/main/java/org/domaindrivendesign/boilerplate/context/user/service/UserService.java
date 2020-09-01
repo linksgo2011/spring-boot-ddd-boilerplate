@@ -12,7 +12,6 @@ public class UserService {
     public static final String TMP_PASSWORD = "123456";
     @Autowired
     private UserRepository userRepository;
-
     public Page<User> listUsers(Pageable pageable) {
         return userRepository.findAll(pageable);
     }

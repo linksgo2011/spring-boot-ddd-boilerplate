@@ -3,9 +3,8 @@ package org.domaindrivendesign.boilerplate.application.admin.cases;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.domaindrivendesign.boilerplate.context.user.model.User;
+import org.joda.time.DateTime;
 import org.modelmapper.ModelMapper;
-
-import java.time.Instant;
 
 public class AddUserCase {
     @Data
@@ -39,7 +38,7 @@ public class AddUserCase {
 
         private boolean emailVerified;
 
-        private Instant createdAt;
+        private DateTime createdAt;
     }
 
     public static User toUser(Request request) {

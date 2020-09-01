@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.joda.time.DateTime;
 
 import java.time.Instant;
 
@@ -24,5 +25,5 @@ public class Role {
 
     private String description;
 
-    private Instant createdAt;
+    private DateTime createdAt;
 }

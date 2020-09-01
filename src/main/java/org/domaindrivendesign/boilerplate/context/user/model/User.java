@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.domaindrivendesign.boilerplate.core.model.AggregateRoot;
+import org.joda.time.DateTime;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -35,7 +38,11 @@ public class User extends AggregateRoot {
     private boolean emailVerified;
 
     @CreatedDate
-    private LocalDateTime createdAt;
+    private DateTime createdAt;
 
+    @LastModifiedDate
+    private DateTime updatedAt;
+
+    @MappedCollection(idColumn = "USER_ID", keyColumn = "ROLE_NAME")
     private List<UserRole> userRoles;
 }
