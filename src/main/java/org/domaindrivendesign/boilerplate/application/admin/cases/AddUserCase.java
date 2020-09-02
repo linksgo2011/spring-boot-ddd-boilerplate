@@ -6,12 +6,14 @@ import org.domaindrivendesign.boilerplate.context.user.model.User;
 
 import org.modelmapper.ModelMapper;
 
+import javax.validation.constraints.Email;
 import java.time.Instant;
 
 public class AddUserCase {
     @Data
     @NoArgsConstructor
     public static class Request {
+        @Email(message = "INVALID_EMAIL")
         private String email;
 
         private String phone;

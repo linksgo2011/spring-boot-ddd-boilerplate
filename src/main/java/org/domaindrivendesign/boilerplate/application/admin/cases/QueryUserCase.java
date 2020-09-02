@@ -4,7 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.domaindrivendesign.boilerplate.context.user.model.UserRole;
-import org.joda.time.DateTime;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 

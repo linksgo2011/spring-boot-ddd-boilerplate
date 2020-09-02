@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/admin/v1/users")
 public class UserResource {
@@ -32,7 +34,7 @@ public class UserResource {
 
     @PostMapping("")
     public AddUserCase.Response addUser(
-            @RequestBody AddUserCase.Request request
+            @RequestBody @Valid AddUserCase.Request request
     ) {
         return AddUserCase.toResponse(userService.addUser(AddUserCase.toUser(request)));
     }

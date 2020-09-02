@@ -21,6 +21,7 @@ A DDD style boilerplate with spring boot
 - Easy to use and understand.
 - Feature limited.
 - Lightweight.
+- Cache Friendly.
 
 ## features
 
@@ -30,3 +31,7 @@ A DDD style boilerplate with spring boot
 - With a small CMS as business example.
 - With multiple applications layers.
 - paging/sort/search for list
+
+## forcus goal
+
+- generic query framework
