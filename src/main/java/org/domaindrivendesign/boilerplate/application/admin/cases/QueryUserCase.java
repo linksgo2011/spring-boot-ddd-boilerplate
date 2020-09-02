@@ -37,14 +37,14 @@ public class QueryUserCase {
 
         private boolean emailVerified;
 
-        private DateTime createdAt;
+        private Instant createdAt;
 
         private List<UserRole> userRoles;
     }
 
     public static Page<Response> toResponse(Page users) {
         return users.map(
-                user -> new ModelMapper().map(users, Response.class)
+                user -> new ModelMapper().map(user, Response.class)
         );
     }
 }

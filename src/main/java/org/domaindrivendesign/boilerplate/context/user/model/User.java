@@ -38,10 +38,10 @@ public class User extends AggregateRoot {
     private boolean emailVerified;
 
     @CreatedDate
-    private DateTime createdAt;
+    private Instant createdAt;
 
     @LastModifiedDate
-    private DateTime updatedAt;
+    private Instant updatedAt;
 
     @MappedCollection(idColumn = "USER_ID", keyColumn = "ROLE_NAME")
     private List<UserRole> userRoles;

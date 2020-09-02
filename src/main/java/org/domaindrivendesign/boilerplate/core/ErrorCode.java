@@ -4,7 +4,8 @@ package org.domaindrivendesign.boilerplate.core;
 import org.springframework.util.StringUtils;
 
 public enum ErrorCode {
-    not_found(404);
+    NOT_FOUND(404),
+    USER_NOT_FOUND(404);
 
     private int statusCode;
 

@@ -25,5 +25,5 @@ public class Role {
 
     private String description;
 
-    private DateTime createdAt;
+    private Instant createdAt;
 }

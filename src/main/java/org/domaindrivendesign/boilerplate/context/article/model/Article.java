@@ -23,7 +23,7 @@ public class Article {
 
     private String author;
 
-    private DateTime updateAt;
+    private Instant updateAt;
 
-    private DateTime createdAt;
+    private Instant createdAt;
 }

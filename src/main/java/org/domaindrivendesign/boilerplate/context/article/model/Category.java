@@ -19,7 +19,7 @@ public class Category {
 
     private String name;
 
-    private DateTime updateAt;
+    private Instant updateAt;
 
-    private DateTime createdAt;
+    private Instant createdAt;
 }
