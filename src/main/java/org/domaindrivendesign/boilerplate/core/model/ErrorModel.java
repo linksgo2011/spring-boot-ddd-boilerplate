@@ -1,13 +1,12 @@
 package org.domaindrivendesign.boilerplate.core.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 
-import java.util.List;
 import java.util.Set;
 
 @Getter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorModel {
     protected final String code;
 

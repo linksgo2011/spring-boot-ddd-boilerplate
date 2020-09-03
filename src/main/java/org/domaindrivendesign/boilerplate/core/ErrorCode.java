@@ -7,6 +7,7 @@ public enum ErrorCode {
     INTERNAL_ERROR(500),
     NOT_FOUND(404),
     USER_NOT_FOUND(404),
+    METHOD_NOT_ALLOWED(405),
     INVALID_PARAMS(400);
 
     private int statusCode;
