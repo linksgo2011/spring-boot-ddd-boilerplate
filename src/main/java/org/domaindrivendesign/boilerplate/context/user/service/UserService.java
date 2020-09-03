@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static org.domaindrivendesign.boilerplate.core.exception.ErrorCode.USER_NOT_FOUND;
@@ -22,6 +23,11 @@ public class UserService {
     private UserRepository userRepository;
 
     public Page<User> listUsers(Pageable pageable) {
+        Predicate predicate = user.firstname.equalsIgnoreCase("dave")
+                .and(user.lastname.startsWithIgnoreCase("mathews"));
+
+        userRepository.findAll(predicate);
+
         return userRepository.findAll(pageable);
     }
 
