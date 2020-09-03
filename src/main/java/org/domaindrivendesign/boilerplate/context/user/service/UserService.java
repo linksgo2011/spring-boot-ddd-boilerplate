@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.domaindrivendesign.boilerplate.core.ErrorCode.USER_NOT_FOUND;
+import static org.domaindrivendesign.boilerplate.core.exception.ErrorCode.USER_NOT_FOUND;
 
 @Service
 public class UserService {

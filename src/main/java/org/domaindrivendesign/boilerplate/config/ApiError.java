@@ -1,6 +1,6 @@
 package org.domaindrivendesign.boilerplate.config;
 
-import org.domaindrivendesign.boilerplate.core.ErrorCode;
+import org.domaindrivendesign.boilerplate.core.exception.ErrorCode;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

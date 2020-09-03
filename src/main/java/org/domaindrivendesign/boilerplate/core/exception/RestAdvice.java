@@ -2,7 +2,6 @@ package org.domaindrivendesign.boilerplate.core.exception;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import lombok.extern.slf4j.Slf4j;
-import org.domaindrivendesign.boilerplate.core.ErrorCode;
 import org.domaindrivendesign.boilerplate.core.model.ErrorModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -28,7 +27,7 @@ public class RestAdvice {
     public ResponseEntity<ErrorModel> onError(BaseException exception) {
         log.error("error, code: {}", exception.getErrorCode(), exception);
 
-        ErrorModel errorModel = new ErrorModel(exception.getErrorCode().name());
+        ErrorModel errorModel = new ErrorModel(exception.getErrorCode());
         return ResponseEntity.status(exception.getErrorCode().getStatusCode()).body(errorModel);
     }
 

@@ -1,7 +1,7 @@
 package org.domaindrivendesign.boilerplate.config;
 
 import com.google.common.base.Optional;
-import org.domaindrivendesign.boilerplate.core.ErrorCode;
+import org.domaindrivendesign.boilerplate.core.exception.ErrorCode;
 import org.domaindrivendesign.boilerplate.core.model.ErrorModel;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
